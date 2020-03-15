@@ -31,7 +31,7 @@ class Desktop extends Component {
         <DesktopContainer>
           <DesktopHeader>
             <a href={`/`}>
-              <Logo src={`/uploads/logo.svg`} alt='logo' />
+              <Logo src={`${process.env.PUBLIC_URL}/logo.svg`} alt='logo' />
             </a>
           </DesktopHeader>
 

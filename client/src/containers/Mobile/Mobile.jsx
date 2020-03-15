@@ -26,7 +26,7 @@ class Mobile extends Component {
         <MobileContainer>
           <MobileHeader>
             <a href={`/`}>
-              <Logo src={`/uploads/logo.svg`} alt='logo' />
+              <Logo src={`${process.env.PUBLIC_URL}/logo.svg`} alt='logo' />
             </a>
           </MobileHeader>
 

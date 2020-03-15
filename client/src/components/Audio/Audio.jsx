@@ -175,9 +175,15 @@ class Audio extends Component {
           <ButtonContainer>
             <Button innerRef={(playButton) => (this.playButton = playButton)}>
               {playing ? (
-                <img src={`/uploads/pause-solid.svg`} alt='logo'></img>
+                <img
+                  src={`${process.env.PUBLIC_URL}/pause-solid.svg`}
+                  alt='logo'
+                ></img>
               ) : (
-                <img src={`/uploads/play-solid.svg `} alt='logo'></img>
+                <img
+                  src={`${process.env.PUBLIC_URL}/play-solid.svg`}
+                  alt='logo'
+                ></img>
               )}
             </Button>
           </ButtonContainer>
