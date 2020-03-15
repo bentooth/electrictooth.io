@@ -1,0 +1,82 @@
+:root {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	box-sizing: border-box;
+	
+	font: 'montserrat-light-webfont' ,'Lucida Sans Unicode','Lucida Sans', Garuda,Verdana,Tahoma, sans-serif;
+	font-style: normal;
+	font-variant-ligatures: normal;
+	font-variant-caps: normal;
+	font-variant-numeric: normal;
+	font-variant-east-asian: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	font-size: 12px;
+	line-height: 1.4;
+	font-family: "montserrat-light-webfont", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+	color: #333;
+	cursor: url('/shiny.gif'), auto;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+  
+*:focus { outline: none; }
+  
+img { user-select: none; }
+
+html { 
+	height: 100%; 
+	overflow-y:scroll; 
+}
+
+body { 
+	height: 100%; 
+	margin: 0;
+  padding: 0;
+	cursor: url('/shiny.gif'), auto;	
+	background-color: #F4F4F8;
+}
+
+body * {
+ cursor: inherit;
+}
+
+audio {
+	background: white;
+	width: 100%;
+	cursor: url('/shiny.gif'), auto;
+	-webkit-tap-highlight-color: red;
+	lighting-color: red;
+}
+
+audio::-webkit-media-controls-panel {
+	background :#F4F4F8;
+	cursor: url('/shiny.gif'), auto;
+}
+
+
+audio::-webkit-media-controls-play-button  {
+	cursor: url('/shiny.gif'), auto;
+}
+audio::-webkit-media-controls-mute-button {
+	cursor: url('/shiny.gif'), auto;
+}
+
+audio::-webkit-media-controls-timeline {
+	cursor: url('/shiny.gif'), auto;
+}
+
+audio::-webkit-media-controls-timeline-container {
+	cursor: url('/shiny.gif'), auto;
+}
+
+.music-player-panel {
+	border-style: solid;
+  border-width: 1px;
+  border-color:  #cecece;
+}
