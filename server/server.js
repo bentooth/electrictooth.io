@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 // const session = require('express-session');
-const mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
+//const mongoose = require('mongoose');
+//mongoose.Promise = require('bluebird');
 //const MongoStore = require('connect-mongo')(session);
 const cors = require('cors');
 
@@ -34,12 +34,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-const URI = 'mongodb://localhost:27017/CSC';
-const db = mongoose.connection.openUri(URI);
-db.on('error', () =>
-  console.error.bind(console, '# MongoDB - connection error: '),
-);
-db.once('open', () => console.log('Database Connection ok!'));
+// const URI = 'mongodb://localhost:27017/CSC';
+// const db = mongoose.connection.openUri(URI);
+// db.on('error', () =>
+//   console.error.bind(console, '# MongoDB - connection error: '),
+// );
+// db.once('open', () => console.log('Database Connection ok!'));
 
 // app.use(
 //   session({
