@@ -61,7 +61,7 @@ class Soundcloud extends Component {
       art: null,
     };
 
-    SC.initialize({ client_id: process.env.REACT_APP_SC_CLIENT_KEY });
+    SC.initialize({ client_id: 'qar87rq7vEGGfgjM0PqrmTBUYhSzUcQ5' });
   }
 
   componentDidMount() {
@@ -109,7 +109,7 @@ class Soundcloud extends Component {
 
             <SoundCloudAudio>
               <Audio
-                src={`${stream}?client_id=${process.env.REACT_APP_SC_CLIENT_KEY}`}
+                src={`${stream}?client_id=qar87rq7vEGGfgjM0PqrmTBUYhSzUcQ5`}
               />
             </SoundCloudAudio>
 
