@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 //const verifyEthTip = require('./controllers/common').verifyEthTip;
-const passHTML = require('./controllers/common').passHTML;
+//const passHTML = require('./controllers/common').passHTML;
 // const getEnabledCurrencies = require('./controllers/paybear')
 //   .getEnabledCurrencies;
 // const getRates = require('./controllers/paybear').getRates;
@@ -33,6 +33,16 @@ app.use('/uploads', express.static(path.join(__dirname, './uploads')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+function passHTML(req, res) {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'), function(
+    err,
+  ) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+}
 
 // const URI = 'mongodb://localhost:27017/CSC';
 // const db = mongoose.connection.openUri(URI);
@@ -57,7 +67,7 @@ app.use(cookieParser());
 app.get('/api/blog/:page', getBlog);
 app.get('/api/find/:post_url', findBlogPost);
 app.get('/api/stream/:title', streamAudio);
-app.get('/*', passHTML);
+app.get('*', passHTML);
 
 app.listen(port, () =>
   console.log(`App Server is listening on http://localhost:${port}`),
