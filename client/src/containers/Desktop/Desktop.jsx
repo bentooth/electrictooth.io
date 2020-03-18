@@ -17,7 +17,7 @@ const DesktopContainer = styled.div`
 `;
 const DesktopHeader = styled.div``;
 const DesktopContent = styled.div`
-  width: 45vw;
+  width: 50vw;
 `;
 
 const Logo = styled.img`

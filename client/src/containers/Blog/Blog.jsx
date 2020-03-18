@@ -16,30 +16,35 @@ const PostsContainer = styled.div`
 class Blog extends Component {
   state = {
     posts: [],
+    allPosts: [],
     current: 5,
-    loading: false,
   };
 
   componentWillMount() {
-    this.setState({ loading: true });
+    let allPosts = posts.posts;
+    let currentPosts = allPosts.slice(0, this.state.current);
 
-    let myPosts = posts.posts.reverse();
-    let currentPosts = myPosts.slice(0, this.state.current);
-
-    this.setState({ posts: currentPosts, loading: false });
+    this.setState({
+      posts: currentPosts,
+      allPosts: allPosts,
+      total: allPosts.length,
+      loading: false,
+    });
   }
 
   loadMore = () => {
-    let myPosts = posts.posts.reverse();
-    let currentPosts = myPosts.slice(
-      this.state.current,
-      this.state.current + 5,
-    );
+    if (this.state.current < this.state.total) {
+      let prev = this.state.current;
+      let next = this.state.current + 5;
 
-    this.setState({
-      posts: [...this.state.posts, ...currentPosts],
-      loading: false,
-    });
+      let currentPosts = this.state.allPosts.slice(prev, next);
+
+      this.setState({
+        posts: [...this.state.posts, ...currentPosts],
+        current: next,
+        loading: false,
+      });
+    }
   };
 
   renderPosts(posts) {
@@ -50,9 +55,7 @@ class Blog extends Component {
     console.log(this.state);
     return (
       <BlogFlexContainer>
-        <PostsContainer>
-          {this.state.loading ? 'loading' : this.renderPosts(this.state.posts)}
-        </PostsContainer>
+        <PostsContainer>{this.renderPosts(this.state.posts)}</PostsContainer>
 
         <Button onClick={this.loadMore} style={{ width: '100%' }}>
           Load more

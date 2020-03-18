@@ -8,4 +8,4 @@ axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 
 ReactDOM.render(<Root />, document.getElementById('root'));
 
-serviceWorker.register();
+serviceWorker.unregister();
